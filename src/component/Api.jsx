@@ -11,8 +11,8 @@ export const Api = () => {
 
   const traerData = async (BUSQUEDA) => {
     const API = "https://pokeapi.co/api/v2/pokemon";
-    // const apiHero = `${API}/${BUSQUEDA}`;
-    const apiHero = `${API}/pikachu`;
+    const apiHero = `${API}/${BUSQUEDA || 'pikachu'}`;
+    // const apiHero = `${API}/pikachu`;
 
     try {
       let res = await axios.get(apiHero);
@@ -27,17 +27,27 @@ export const Api = () => {
     }
   };
 
+  const buscarPokemon = (e)=>{
+    let nombrePokemon = e.target.value.toLowerCase()
+    console.log(nombrePokemon);
+    traerData(nombrePokemon)
+  }
+
   console.log(data);
 
   return (
     <>
       <h1>Consumiendo la API de pokemon</h1>
+
+      <input type="text" placeholder="Nombre del pokemon" className="input-pokemon" onChange={(e)=>buscarPokemon(e)}/>
       {data ? (
         data.map((pokemon, i) => (
           <div key={i}>
             <h3>datos del pokemon</h3>
             <ul>
-              <li><span>Habilidad: </span>{pokemon.abilities[0].ability.name}</li>
+              <li><span>Nombre del pokemon: </span>{pokemon.name}</li>
+              <li><span>Id: </span>{pokemon.id}</li>
+              <li><span>Order: </span>{pokemon.order}</li>
             </ul>
           </div>
         ))
