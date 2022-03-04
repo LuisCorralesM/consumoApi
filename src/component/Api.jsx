@@ -14,11 +14,12 @@ export const Api = () => {
 
   const traerData = async (BUSQUEDA) => {
     const API = "https://pokeapi.co/api/v2/pokemon";
-    const apiHero = `${API}/${BUSQUEDA || "pikachu"}`;
+    const apiPokemon = `${API}/${BUSQUEDA || "pikachu"}`;
 
     try {
-      let res = await axios.get(apiHero);
+      let res = await axios.get(apiPokemon);
       let pokemon = res.data;
+      console.log(res.data);
       let dataPokemon = [];
 
       dataPokemon.push(pokemon);
@@ -29,9 +30,34 @@ export const Api = () => {
       alert("nombre de pokemon no valido");
       document.getElementById("input-pokemon").value = "";
     }
+
   };
 
   let nombrePokemon = "";
+  let opcionesPokemones = [
+    'Pokemones más populares',
+    'Charmander',
+    'Bulbasaur',
+    'Squirtle',
+    'Chikorita',
+    'Cyndaquil',
+    'Totodile',
+    'Treecko',
+    'Torchic',
+    'Turtwig',
+    'Mudkip',
+    'Chimchar',
+    'Piplup',
+    'Snivy',
+    'Tepig',
+    'Oshawott',
+    'Chespin',
+    'Fennekin',
+    'Froakie',
+    'Rowlet',
+    'Litten',
+    'Popplio',
+  ];
 
   const guardarNombre = (e) => {
     nombrePokemon = e.target.value.toLowerCase();
@@ -39,41 +65,67 @@ export const Api = () => {
 
   const buscarPokemon = (e) => {
     e.preventDefault();
-
-    console.log(nombrePokemon);
     traerData(nombrePokemon);
   };
 
-  console.log(data);
+  const inputNombre = document.getElementById('input-pokemon')
 
   return (
     <>
       <h1 className="titulo-principal">Consumiendo la API de pokemon</h1>
       <div className="contenedor-data">
-        <input
-          type="text"
-          placeholder="Nombre del pokemon"
-          id="input-pokemon"
-          className="input-buscar"
-          onChange={(e) => guardarNombre(e)}
-        />
-        <button 
-        onClick={(e) => buscarPokemon(e)} className="button-buscar">
-          Buscar
-        </button>
+        <div>
+          <input
+            type="text"
+            placeholder="Nombre del pokemon"
+            id="input-pokemon"
+            className="input-buscar"
+            onChange={(e) => guardarNombre(e)}
+          />
+          <button onClick={(e) => buscarPokemon(e)} className="button-buscar">
+            Buscar
+          </button>
+        </div>
+        <div>
+          <select name="lista-pokemones" className="lista-pokemones">
+            {
+              opcionesPokemones ?(
+                opcionesPokemones.map((nombre, i) => (
+                    <option key={i} value={nombre}>{nombre}</option>
+                ))
+              ): (<div>No hay opciones</div>)
+            }
+          </select>
+        </div>
         {data ? (
           data.map((pokemon, i) => (
-            <div key={i} className='contenedor-data-pokemon'>
+            <div key={i} className="contenedor-data-pokemon">
               <h3 className="titulo-datos">Datos del pokemon</h3>
               <ul>
                 <li className="gird-img">
-                  <img src={pokemon.sprites.front_default} alt=""  className="img-pokemones"/>
-                  <img src={pokemon.sprites.back_default} alt=""  className="img-pokemones"/>
-                  <img src={pokemon.sprites.front_default} alt=""  className="img-pokemones"/>
+                  <img
+                    src={pokemon.sprites.front_default}
+                    alt=""
+                    className="img-pokemones"
+                  />
+                  <img
+                    src={pokemon.sprites.back_default}
+                    alt=""
+                    className="img-pokemones"
+                  />
+                  <img
+                    src={pokemon.sprites.front_default}
+                    alt=""
+                    className="img-pokemones"
+                  />
                 </li>
                 <li>
                   <span>Nombre del pokemon: </span>
                   {pokemon.name}
+                </li>
+                <li>
+                  <span>Tipo de pokemón: </span>
+                  {pokemon.types[i].type.name}
                 </li>
                 <li>
                   <span>Id: </span>
@@ -88,7 +140,6 @@ export const Api = () => {
           ))
         ) : (
           <div>
-            {" "}
             <p>no hay data</p>
           </div>
         )}
