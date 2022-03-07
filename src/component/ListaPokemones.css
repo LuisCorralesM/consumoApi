@@ -1,0 +1,11 @@
+.lista-pokemones{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+}
+
+.lista-pokemones > option{
+    color: #000;
+}

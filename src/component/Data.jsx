@@ -3,9 +3,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 // estilos
-import "../styles/styles.css";
+import "./Data.css";
 
-export const Api = () => {
+export const Data = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -30,34 +30,9 @@ export const Api = () => {
       alert("nombre de pokemon no valido");
       document.getElementById("input-pokemon").value = "";
     }
-
   };
 
   let nombrePokemon = "";
-  let opcionesPokemones = [
-    'Pokemones más populares',
-    'Charmander',
-    'Bulbasaur',
-    'Squirtle',
-    'Chikorita',
-    'Cyndaquil',
-    'Totodile',
-    'Treecko',
-    'Torchic',
-    'Turtwig',
-    'Mudkip',
-    'Chimchar',
-    'Piplup',
-    'Snivy',
-    'Tepig',
-    'Oshawott',
-    'Chespin',
-    'Fennekin',
-    'Froakie',
-    'Rowlet',
-    'Litten',
-    'Popplio',
-  ];
 
   const guardarNombre = (e) => {
     nombrePokemon = e.target.value.toLowerCase();
@@ -68,11 +43,8 @@ export const Api = () => {
     traerData(nombrePokemon);
   };
 
-  const inputNombre = document.getElementById('input-pokemon')
-
   return (
     <>
-      <h1 className="titulo-principal">Consumiendo la API de pokemon</h1>
       <div className="contenedor-data">
         <div>
           <input
@@ -86,17 +58,7 @@ export const Api = () => {
             Buscar
           </button>
         </div>
-        <div>
-          <select name="lista-pokemones" className="lista-pokemones">
-            {
-              opcionesPokemones ?(
-                opcionesPokemones.map((nombre, i) => (
-                    <option key={i} value={nombre}>{nombre}</option>
-                ))
-              ): (<div>No hay opciones</div>)
-            }
-          </select>
-        </div>
+        <div></div>
         {data ? (
           data.map((pokemon, i) => (
             <div key={i} className="contenedor-data-pokemon">

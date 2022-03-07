@@ -1,0 +1,19 @@
+
+/* componnte btn cambiar color */
+.btn__cambiar-color{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 65px;
+    height: 65px;
+    font-size: 40px;
+    border-radius: 50%;
+    color: blue;
+    background-color: rgb(201, 241, 241);
+}
+
+.btn__cambiar-color:hover{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(133, 240, 240);
+}
