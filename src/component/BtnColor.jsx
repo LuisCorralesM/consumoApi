@@ -12,8 +12,6 @@ export const BtnColor = () => {
         document.body.style.backgroundColor = `#${r1}${r2}${r3}`;
   };
   return (
-    <button className="btn__cambiar-color" onClick={(e) => cambiarFondo(e)}>
-      ☻
-    </button>
+    <img src="assets/img/btn-cambiarColor.ico" className="btn__cambiar-color" onClick={(e) => cambiarFondo(e)}/>
   );
 };

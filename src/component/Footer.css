@@ -1,0 +1,17 @@
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    background-color: rgb(44, 44, 44);
+}
+
+.derechos-de-autor{
+    font-size: 20px;
+}
+
+.simbolo-copyright{
+    font-weight: 900;
+    font-size: 24px;
+}

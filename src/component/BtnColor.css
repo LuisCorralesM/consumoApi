@@ -2,14 +2,14 @@
 /* componnte btn cambiar color */
 .btn__cambiar-color{
     position: absolute;
-    bottom: 15px;
+    bottom: 50px;
     right: 15px;
     width: 65px;
     height: 65px;
     font-size: 40px;
     border-radius: 50%;
     color: blue;
-    background-color: rgb(201, 241, 241);
+    background-color: rgb(46, 122, 122);
 }
 
 .btn__cambiar-color:hover{

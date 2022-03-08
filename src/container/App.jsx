@@ -1,18 +1,26 @@
 // Componentes
+import { Header } from "../component/Header";
 import { Data } from "../component/Data";
 import { BtnColor } from "../component/BtnColor";
 import { ListaPokemones } from "../component/ListaPokemones";
+import { Wsp } from "../component/Wsp";
+import { Footer } from "../component/Footer";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="titulo-principal">Consumiendo la API de pokemon</h1>
+      {/* Componente cabecera */}
+      <Header/>
       {/* Componente que hace el consumo de la API */}
-      <Data></Data>
+      <Data/>
       {/* Componente que cambia el color de fondo */}
-      <BtnColor></BtnColor>
+      <BtnColor/>
       {/* Componente que muestra una lista con los pokemones más famosos*/}
-      <ListaPokemones></ListaPokemones>
+      <ListaPokemones/>
+      {/* Componente botón de WhatsApp */}
+      <Wsp/>
+      {/* Componente pie de página */}
+      <Footer/>
     </div>
   );
 }
