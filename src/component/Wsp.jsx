@@ -10,7 +10,7 @@ export const Wsp = () => {
     }
   return (
     <button className='btn-wsp' onClick={()=> abrirWsp()}>
-        <img className="icono-wsp" src="assets/img/wsp.png" alt="icono-wsp" />
+        <img className="icono-wsp" src="assets/img/wsp.png" alt="icono-wsp" id="btn-wsp"/>
     </button>
   )
 }
