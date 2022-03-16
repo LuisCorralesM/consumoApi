@@ -6,10 +6,23 @@ export const Cards = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    traerData(20);
+    traerData(4);
   }, []);
 
   let dataPokemon = [];
+  let carrito = [];
+
+  const agregarCarrito = (id) => {
+
+    let ntf = {
+      ...cards[id - 1],
+    };
+    carrito.push(ntf);
+    document.getElementById(id).disabled = true;
+    console.log(carrito);
+
+    // localStorage.setItem('carrito', JSON.stringify(carrito))
+  };
 
   const traerData = async (n) => {
     for (let i = 1; i <= n; i++) {
@@ -26,7 +39,7 @@ export const Cards = () => {
     }
     setCards(dataPokemon);
   };
-// console.log(cards);
+  // console.log(cards);
   return (
     <div className="content-cards">
       {cards ? (
@@ -37,10 +50,23 @@ export const Cards = () => {
               alt=""
               className="img-pokemones"
             />
-            <p>{pokemon.name}</p>
-            <p> {pokemon.types[0].type.name}</p>
-            <p>${Math.round(Math.random() * 100)}</p>
-            <button className="btn-carrito">Agregar al carrito</button>
+            <p>
+              <span>Nombre: </span>
+              {pokemon.name}
+            </p>
+            <p>
+              <span>Tipo: </span> {pokemon.types[0].type.name}
+            </p>
+            <p>
+              <span>Precio: </span>$ {Math.round(Math.random() * 1000)}
+            </p>
+            <button
+              className="btn-carrito"
+              onClick={(e) => agregarCarrito(e.target.id)}
+              id={pokemon.id}
+            >
+              Agregar al carrito
+            </button>
           </div>
         ))
       ) : (
