@@ -4,6 +4,7 @@ import { Data } from "../component/Data";
 import { BtnColor } from "../component/BtnColor";
 import { ListaPokemones } from "../component/ListaPokemones";
 import { Wsp } from "../component/Wsp";
+import { Cards } from "../component/Cards";
 import { Footer } from "../component/Footer";
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
       <ListaPokemones/>
       {/* Componente botón de WhatsApp */}
       <Wsp/>
+      {/* Componente Cards */}
+      <Cards/>
       {/* Componente pie de página */}
       <Footer/>
     </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import './Wsp.css'
 
 export const Wsp = () => {
-
     const abrirWsp = ()=>{
         let
         numero = 'https://chat.whatsapp.com/Ld7qOM31Re62PAS4pF9bwr';

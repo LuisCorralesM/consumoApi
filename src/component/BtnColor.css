@@ -1,8 +1,8 @@
 
 /* componnte btn cambiar color */
 .btn__cambiar-color{
-    position: absolute;
-    bottom: 50px;
+    position: fixed;
+    bottom: 40px;
     right: 15px;
     width: 65px;
     height: 65px;

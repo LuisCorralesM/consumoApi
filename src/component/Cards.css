@@ -1,0 +1,22 @@
+.content-cards{
+    padding: 20px;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+}
+
+.card{
+    background-color: rgb(15, 1, 51);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.btn-carrito{
+    padding: 5px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px 10px 10px 10px;
+}

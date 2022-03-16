@@ -19,7 +19,6 @@ export const Data = () => {
     try {
       let res = await axios.get(apiPokemon);
       let pokemon = res.data;
-      console.log(res.data);
       let dataPokemon = [];
 
       dataPokemon.push(pokemon);
