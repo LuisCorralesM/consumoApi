@@ -1,3 +1,4 @@
+/* Archivo .Css (Estilos del Componente BtnColor) */
 
 /* componnte btn cambiar color */
 .btn__cambiar-color{
@@ -12,6 +13,8 @@
     background-color: rgb(46, 122, 122);
 }
 
+/* (Aplica estilo cuando el Mouse pasa encima del Icono BtnColor) 
+hover(SeudoElemento)*/
 .btn__cambiar-color:hover{
     width: 70px;
     height: 70px;

@@ -1,4 +1,7 @@
+//Import React (Librería)
 import React from 'react';
+
+//Import Medoto -render- y -screen-
 import { render, screen } from '@testing-library/react';
 
 // se importa el componente a testeaer
