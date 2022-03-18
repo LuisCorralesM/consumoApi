@@ -1,3 +1,7 @@
+/* Archivo .Css (Estilos del Componente Wsp) */
+
+
+/*Modificación estilos Boton */
 .btn-wsp{
     position: fixed;
     bottom: 40px;
@@ -5,10 +9,12 @@
     border-radius: 50%;
 }
 
+/*Modificación estilos Icono visual */
 .icono-wsp{
     width: 55px;
 }
 
+/*Modificación estilos Boton (Efecto Moverse) */
 .icono-wsp:hover{
     width: 65px;
 }

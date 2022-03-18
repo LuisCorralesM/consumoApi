@@ -1,3 +1,6 @@
+/* Archivo .Css (Estilos del Componente BtnColor) */
+
+/*Damos una posición, tamaño, fondo al footer, entre otras caracteristicas  */
 footer{
     position: fixed;
     bottom: 0;
@@ -7,10 +10,17 @@ footer{
     background-color: rgb(44, 44, 44);
 }
 
+
+    /* Se utiliza la creación de Clases (className)
+    desde el archivo Footer.jsx, para hacer el llamado
+    en nuestro archivo Footer.css (estilos)*/
+    
+    /*Modificamos el tamaño de la Letra*/
 .derechos-de-autor{
     font-size: 20px;
 }
 
+ /*Damos unas caracteristicas al simbolo de "copyright"*/
 .simbolo-copyright{
     font-weight: 900;
     font-size: 24px;

@@ -1,11 +1,16 @@
+/* Archivo .Css (Estilos del Componente BtnColor) */
+
+/*Creamos los Estilos para la Caja -NFTs más Populares-*/
 .lista-pokemones{
     position: fixed;
     bottom: 40px;
     left: 15px;
     font-size: 24px;
-    color: rgb(0, 0, 0);
+    color: yellow;
+    background-color: #576574;
 }
 
+/*Damos un color de letra, a la lista de pokemones que monstramos al usuario*/
 .lista-pokemones > option{
-    color: #000;
+    color: white;
 }

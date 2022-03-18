@@ -1,6 +1,10 @@
-.titulo-principal{
-    text-align: center;
-    padding-top: 10px;
-    font-size: 50px;
-    color: rgb(78, 2, 255);
+/* Archivo .Css (Estilos del Componente BtnColor) */
+
+/*Por medio del selector (clase), damos unas
+        caracteristicas al titulo principal*/
+.titulo-principal {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 50px;
+  color: rgb(78, 2, 255);
 }
