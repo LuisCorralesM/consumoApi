@@ -19,14 +19,12 @@ import "./Cards.css";
 
 //Se crea y se exporta el Componente -Cards-
 export const Cards = () => {
-
   //Sintaxis (useState)
-  const [cards, setCards] = useState([ ]);
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    traerData(4);
+    traerData(12);
   }, []);
-
 
   /* Se crean dos Arreglos
   dataPokemon= (Guardar Inf que nos llega de la Api)
@@ -35,16 +33,25 @@ export const Cards = () => {
   let dataPokemon = [];
   let carrito = [];
 
-  const agregarCarrito = (id) => {
+  if (localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+  }
 
+  const agregarCarrito = (id) => {
     let nft = {
       ...cards[id - 1],
     };
+    
     carrito.push(nft);
+    console.log(carrito);
     document.getElementById(id).disabled = true;
-    alert("NFT Agregado al carritos ;) ")
+    alert("NFT Agregado al carritos ;) ");
+    document.getElementById(id).style.backgroundColor = "#292";
 
-    // localStorage.setItem('carrito', JSON.stringify(carrito))
+    if (localStorage.getItem("carrito")) {
+      localStorage.removeItem("carrito");
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
   };
 
   /*
@@ -62,17 +69,15 @@ export const Cards = () => {
       } catch (error) {
         alert("Ups! -NFTs no encontrado-");
       }
-    }                                                       
+    }
     setCards(dataPokemon);
   };
   return (
     <div className="content-cards">
-
-     {/*Operador ternario ( ? ) =  if else slse*/}
+      {/*Operador ternario ( ? ) =  if else slse*/}
       {cards ? (
         //Cards = Es un Arreglo con la data.
         cards.map((pokemon, i) => (
-
           /*En la Etiqueta <div>
           se pinta la información por cada Pokemon
           */
@@ -90,15 +95,17 @@ export const Cards = () => {
               <span>Tipo: </span> {pokemon.types[0].type.name}
             </p>
             <p>
-              <span>Precio: </span>$ {Math.round(Math.random() * 1000)}
+              <span>Precio: </span>
+              <p className={pokemon.id}>{Math.round(Math.random() * 1000)}</p>
             </p>
-            <button
-              className="btn-carrito"
-              onClick={(e) => agregarCarrito(e.target.id)}
-              id={pokemon.id}
-            >
-              Agregar al carrito
-            </button>
+            <div className="contenedor-btn-carrito">
+              <img
+                className="btn-carrito"
+                onClick={(e) => agregarCarrito(e.target.id)}
+                id={pokemon.id}
+                src="./assets/img/carrito.jpg"
+              />
+            </div>
           </div>
         ))
       ) : (

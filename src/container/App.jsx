@@ -19,7 +19,7 @@ import { Footer } from "../component/Comp_N°4-Footer/Footer";
 import { Header } from "../component/Comp_N°5-Header/Header";
 import { ListaPokemones } from "../component/Comp_N°6-ListaPokemones/ListaPokemones";
 import { Wsp } from "../component/Comp_N°7-Wsp/Wsp";
-
+import { Carrito } from "../component/Comp_N°8-Carrito/Carrito";
 /*Creamos una función (Componente), a la cual llamamos
 App, dicha función tendrá un return
 
@@ -43,6 +43,7 @@ function App() {
       {/* Componente Cards */}
       <Cards />
       {/* Componente pie de página */}
+      <Carrito/>
       <Footer />
     </div>
   );
