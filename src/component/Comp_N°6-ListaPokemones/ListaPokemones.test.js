@@ -10,8 +10,8 @@ import { ListaPokemones } from './ListaPokemones';
 // 3) Refactors (clean code, code smells)
 
 describe('ListaPokemones', ()=>{
-  it('Debe contener un texto: Pokemones más populares', ()=>{
+  it('Debe contener un texto: NFTs más populares', ()=>{
     render(<ListaPokemones/>);
-    expect(screen.queryByText(/Pokemones más populares/i)).toBeInTheDocument();
+    expect(screen.queryByText(/NFTs más populares/i)).toBeInTheDocument();
   })
 })

@@ -10,8 +10,8 @@ import { Header } from './Header';
 // 3) Refactors (clean code, code smells)
 
 describe('Header', ()=>{
-  it('Debe contener un titulo: Consumiendo la API de pokemon', ()=>{
+  it('Debe contener un titulo: Ditroy Technology NFTs', ()=>{
     render(<Header/>);
-    expect(screen.queryByText(/Consumiendo la API de pokemon/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Ditroy Technology NFTs/i)).toBeInTheDocument();
   })
 })

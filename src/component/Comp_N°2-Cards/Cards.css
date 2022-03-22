@@ -1,17 +1,22 @@
 /* Archivo .Css (Estilos del Componente Cards) */
 
 /*Modificamos estilos de la Etiqueta <div>(Que contiene las Cards)*/
+
+.contenedor{
+    display: flex;
+}
+
 .content-cards{
     padding: 20px;
     padding-bottom: 100px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 40px;
 }
 
 /*Estilo de cada uno de las Cards (Pokemon/NFTs)*/
 .card{
-    background-color: rgb(15, 1, 51);
+    background-color: rgb(223, 219, 219);
     border-radius: 20px;
     text-align: center;
     font-size: 28px;
@@ -20,7 +25,7 @@
 }
 
 .card span{
- color: rgb(255, 255, 255);
+ color: rgb(75, 74, 74);
  text-shadow: 4px 4px 8px rgb(0, 46, 250);
 }
 
@@ -63,17 +68,23 @@
 
 /* DESKTOP */
 .contenedor-carrito {
-    min-height: 85vh;
+    position: fixed;
+    right: 0;
+    top: 15%;
+    min-height: 60vh;
+    width: 30%;
     margin: 10px;
+    bottom: 100px;
+    overflow-y: scroll;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
-    /* background-image: url("https://cdn.pixabay.com/photo/2019/03/05/02/02/grocery-shopping-4035413__340.png"); */
-    background: cover;
-
+    background-color: #ffff;
+    scroll-margin: initial;
+    border-radius: 20px;
 }
 
 .titulo-carrito {
-    font-size: 60px;
+    font-size: 34px;
     text-align: center;
     font-weight: 900;
     color: var(--color-8);
@@ -168,4 +179,8 @@
 
 .btn-vaciar-carrito{
     background-color: #700;
+    margin: 0 0 40px 40%;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 5px;
 }

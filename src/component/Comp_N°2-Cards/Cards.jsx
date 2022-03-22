@@ -40,28 +40,46 @@ export const Cards = () => {
 
 
   const agregarCarrito = (id) => {
-    let nft = {
-      ...cards[id - 1],
-    };
+    const add = (n) => {
+      let nft = {
+        ...cards[n - 1],
+      };
 
-    carro.push(nft);
-    document.getElementById(id).disabled = true;
-    alert("NFT Agregado al carritos ;) ");
-    document.getElementById(id).style.backgroundColor = "#292";
+      carro.push(nft);
+      document.getElementById(n).disabled = true;
+      alert("NFT Agregado al carritos ;) ");
+      document.getElementById(n).style.backgroundColor = "#292";
 
-    if (localStorage.getItem("carrito")) {
-      let localS = JSON.parse(localStorage.getItem("carrito"));
-      localS.push(nft)
-      console.log(localS);
-      localStorage.removeItem("carrito");
+      if (localStorage.getItem("carrito")) {
+        let localS = JSON.parse(localStorage.getItem("carrito"));
+        localS.push(nft)
+        console.log(localS);
+        localStorage.removeItem("carrito");
 
-      localStorage.setItem("carrito", JSON.stringify(localS));
-    } else {
-      localStorage.setItem("carrito", JSON.stringify(carro));
+        localStorage.setItem("carrito", JSON.stringify(localS));
+      } else {
+        localStorage.setItem("carrito", JSON.stringify(carro));
+      }
+
+      let pintarCarro = JSON.parse(localStorage.getItem("carrito"));
+      setCarrito(pintarCarro);
     }
 
-    let pintarCarro = JSON.parse(localStorage.getItem("carrito"));
-    setCarrito(pintarCarro);
+    if (localStorage.getItem('carrito')) {
+      let dataLocal = JSON.parse(localStorage.getItem('carrito'));
+      let guardar = true;
+      dataLocal.forEach(element => {
+        if (element.id == id) {
+          alert('Ya está en el carrito')
+          return guardar = false;
+        }
+      });
+      if (guardar) {
+        add(id)
+      }
+    } else {
+      add(id)
+    }
   };
 
   /*
@@ -95,7 +113,7 @@ export const Cards = () => {
   }
 
   return (
-    <>
+    <div className="contenedor">
       <div className="content-cards">
         {/*Operador ternario ( ? ) =  if else slse*/}
         {cards ? (
@@ -170,8 +188,7 @@ export const Cards = () => {
                 </th>
               </tr>
             )}
-
-            <tfoot>
+            {/* <tfoot>
               <th scope="row" colspan="1" id="th-total">
                 Total productos
               </th>
@@ -179,12 +196,12 @@ export const Cards = () => {
               <td className="font-weight-bold">
                 $ <span>xxx</span>
               </td>
-            </tfoot>
+            </tfoot> */}
           </table>
         </div>
         <button className="btn-vaciar-carrito" onClick={() => vaciarCarrito()}>vaciar carrito</button>
       </div>
-    </>
+    </div>
 
   );
 };
